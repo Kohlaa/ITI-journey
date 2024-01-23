@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day1 task 7</title>
+  </head>
+  <body>
+    <select id="student-dropdown"></select>
+    <div id="student-grades"></div>
+    <script>
+      let studentGrades = new Map();
+      studentGrades.set("Mahmoud", {
+        Grades: [
+          { Coursename: "JavaScript", Grade: "Excellent" },
+          { Coursename: "Jquery", Grade: "Good" },
+          { Coursename: "CSS", Grade: "V.Good" },
+        ],
+      });
+      studentGrades.set("Ahmed", {
+        Grades: [
+          { Coursename: "Python", Grade: "V.Good" },
+          { Coursename: "JS", Grade: "Excellent" },
+          { Coursename: "HTML", Grade: "Good" },
+        ],
+      });
+
+      for (const [studentName, studentGrade] of studentGrades) {
+        console.log(`Student Name: ${studentName}`);
+        console.log(`Grades:`);
+
+        for (const grade of studentGrade.Grades) {
+          console.log(
+            `Course Name: ${grade.Coursename}, Grade: ${grade.Grade}`
+          );
+        }
+      }
+      const studentDropdown = document.querySelector("#student-dropdown");
+
+      for (const studentName of studentGrades.keys()) {
+        const option = document.createElement("option");
+        option.value = studentName;
+        option.textContent = studentName;
+        studentDropdown.appendChild(option);
+      }
+
+      studentDropdown.addEventListener("change", () => {
+        const studentName = studentDropdown.value;
+        const studentGrade = studentGrades.get(studentName);
+
+        const gradesDiv = document.querySelector("#student-grades");
+        gradesDiv.innerHTML = "";
+
+        for (const grade of studentGrade.Grades) {
+          const p = document.createElement("p");
+          p.textContent = `Course Name: ${grade.CourseName}, Grade: ${grade.Grade}`;
+          gradesDiv.appendChild(p);
+        }
+      });
+    </script>
+  </body>
+</html>

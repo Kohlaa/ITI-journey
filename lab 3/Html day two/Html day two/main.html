@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+
+    <style>
+        .row1 {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 120px; /* Example height for the container */
+             /* Just for visualization */
+        }
+
+        .row1 a {
+            text-decoration: none; /* Remove underline from links */
+            margin: 10px; /* Add margin between buttons */
+        }
+
+        .row1 button {
+            border: none; /* Remove default button border */
+            background: none; /* Remove default button background */
+            padding: 0; /* Remove default button padding */
+        }
+
+        .row1 img {
+            width: 100px; /* Set image width */
+            height: 100px; /* Set image height */
+        }
+
+        img {
+            width: 100px; /* Set image width */
+            height: 100px; /* Set image height */
+        }
+
+
+
+        .news-container {
+            height: 400px; /* Set a fixed height for the container */
+            overflow-y: auto; /* Enable vertical scrollbar */
+            border: 1px solid #ccc; /* Just for visualization */
+            padding: 10px; /* Optional padding for spacing */
+        }
+
+        .news-article {
+            margin-bottom: 20px; /* Optional margin between articles */
+        }
+
+        .row {
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .row > div {
+            flex: 1; /* Each div occupies equal space */
+            /* Just for visualization */
+            padding: 20px; /* Add some padding for spacing */
+            margin: 2px; /* Optional margin for spacing between elements */
+        }
+
+
+
+        .container {
+            display: flex; /* Use flexbox for layout */
+            width: 100%; /* Occupy full width of the viewport */
+            height: 100vh;
+             /* Occupy full height of the viewport */
+        }
+
+        .column {
+            flex: 1; /* Each column occupies equal space */
+            border: 1px solid #ccc; /* Just for visualization */
+            padding: 20px; 
+            width: 10%;/* Add some padding for spacing */
+        }
+        .column2 {
+            flex: 1; /* Each column occupies equal space */
+            border: 1px solid #ccc; /* Just for visualization */
+            padding: 20px;
+            width: 60%;
+             /* Add some padding for spacing */
+        }
+        .column3 {
+            flex: 1; /* Each column occupies equal space */
+            border: 1px solid #ccc; /* Just for visualization */
+            padding: 20px;
+            width: 10%; /* Add some padding for spacing */
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+        }
+
+        .login-box {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"],
+        .login-box input[type="submit"] {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
+        }
+
+        .login-box input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .login-box input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div style="background-color: blanchedalmond;">
+    <!-- first part Row -->
+    <div style="background-color: aqua; text-align: center; height: 90px; ">
+        <h3> <~ Header ~> </h3>
+        <h1> <~ Website Logo ~> </h1>
+    </div>
+
+    <!-- second part Row -->
+    <div style="background-color: beige; text-align: center; height: 90px; ">
+        <h3> <~ Navgation Bar ~> </h3>
+        <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    </div>
+
+    <div class="container">
+        <div class="column" style="background-color: burlywood; width: 20%;">
+            <!-- Content for the first column -->
+            
+            <div class="row">
+                <div class="login-box">
+                    <!-- Content for the first row, first column -->
+                    <div class="right-column" style=" align-items: center;">
+                        <form>
+                            <input type="text" placeholder="Username" required>
+                            <input type="password" placeholder="Password" required>
+                            <input type="submit" value="Login">
+                        </form>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div > 
+                <h1 style="text-align: center;"> My Pages Online </h1> 
+                <div class="row1">
+                    <!-- Content for the second row, second column -->
+                    
+                    <a href="https://web.facebook.com/">
+                    <button>
+                        <img src="face.png" alt="Button Image">
+                    </button>
+                    </a>
+                    <br>
+                    <a href="https://twitter.com/">
+                    <button>
+                        <img src="download (1).png" alt="Button Image">
+                    </button>
+                </a>
+                </div>
+            </div>
+            <div class="row">  
+                <div >
+                    <!-- Content for the second row, second column -->
+                    <!--  -->
+            
+                    <iframe width="400" height="220" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+               
+                </div>
+            </div>
+        </div>
+        <div class="column2" style="background-color: aliceblue; width: 60%;">
+            <!-- Content for the second column -->
+
+            <h1 style="text-align: center;">
+                My profile
+            </h1>
+
+            <ul>
+                <li>Age: 22</li>
+                <li>Address: damanhur</li>
+                <li>Phone: 01067269088</li>
+                <li> 
+                    <a href="https://www.damanhour.edu.eg/pages/default.aspx">
+                        damanhur university
+                    </a>
+                </li>
+                <li>Graduation Year: 2023 </li>
+                <li>
+                    Hobbies
+                    <ol type="I">
+                        <li>
+                            Reading
+                        </li>
+                        <li>
+                            Football
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <p> Mail: 
+                        <a href="mailto:elkurdieslam@gmail.com"> Send Me</a>
+                    </p>
+                </li>
+    
+            </ul>
+
+        </div>
+        <div class="column3" style="background-color: thistle;width: 20%;">
+
+
+
+
+            <!-- Content for the third column -->
+            <div class="row">
+                <div>
+                    <!-- Content for the first row, first column -->
+                    <div class="right-column" style=" align-items: center;">
+                        <!-- Content for right column -->
+                        <img   src="personal.jpg" alt="Eslam" width="200" height="200">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">  
+                <div class="news-container">
+                    <!-- Content for the second row, second column -->
+                    <h2 style="text-align: center;">News</h2>
+                    <div class="news-article">
+                        <h2>Breaking News: Important Event</h2>
+                        <p>Date: November 26, 2023</p>
+                        <p>Summary: This is a brief summary of the breaking news. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="https://www.livemint.com/news/world/israelhamas-war-israeli-hostages-hamas-israel-release-prisoners-american-girl-middle-east-news-palestinian-joe-biden-11701045449792.html">Read more</a>
+                    </div>
+                
+                    <div class="news-article">
+                        <h2>Technology Advancement Unveiled</h2>
+                        <p>Date: November 25, 2023</p>
+                        <p>Summary: A new breakthrough in technology was announced today. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="https://www.livemint.com/news/world/israelhamas-war-israeli-hostages-hamas-israel-release-prisoners-american-girl-middle-east-news-palestinian-joe-biden-11701045449792.html">Read more</a>
+                    </div>
+                    <div class="news-article">
+                        <h2>Technology Advancement Unveiled</h2>
+                        <p>Date: November 25, 2023</p>
+                        <p>Summary: A new breakthrough in technology was announced today. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="https://www.livemint.com/news/world/israelhamas-war-israeli-hostages-hamas-israel-release-prisoners-american-girl-middle-east-news-palestinian-joe-biden-11701045449792.html">Read more</a>
+                    </div>
+                    <div class="news-article">
+                        <h2>Technology Advancement Unveiled</h2>
+                        <p>Date: November 25, 2023</p>
+                        <p>Summary: A new breakthrough in technology was announced today. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="https://www.livemint.com/news/world/israelhamas-war-israeli-hostages-hamas-israel-release-prisoners-american-girl-middle-east-news-palestinian-joe-biden-11701045449792.html">Read more</a>
+                    </div>
+                    <div class="news-article">
+                        <h2>Technology Advancement Unveiled</h2>
+                        <p>Date: November 25, 2023</p>
+                        <p>Summary: A new breakthrough in technology was announced today. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="https://www.livemint.com/news/world/israelhamas-war-israeli-hostages-hamas-israel-release-prisoners-american-girl-middle-east-news-palestinian-joe-biden-11701045449792.html">Read more</a>
+                    </div>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

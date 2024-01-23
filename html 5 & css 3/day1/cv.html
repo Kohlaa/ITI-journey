@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cv">
+        <div class="header">
+            <div class="image">
+                <img src="img.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>
+                    Harry Potter
+                </h1>
+                <h2>
+                    Actor
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum rerum quidem ex minus omnis provident,
+                    voluptatem vero recusandae. Doloribus laborum sapiente natus laudantium alias fuga itaque neque
+                    consectetur? Sit, eos!
+                </p>
+            </div>
+        </div>
+        <time datetime="2001-06-28">Born on May 15, 1990</time>
+        <section style="display: flex;gap: 40px; height: 400px;" >
+            <section>
+                <section class="contact" onmouseover="playSound()" onmouseout="stopSound()">
+                    <h2>Contact</h2>
+                    <p>Email: harry@gmail.com</p>
+                    <p>Phone: +1234567890</p>
+                    <!-- <source src="https://www.soundsnap.com/hood_star.mp3" type="audio.mp3"> -->
+                    <audio id="ringingSound" >
+                        <source src="./notification.mp3" type="audio/mp3">
+                    </audio>
+
+                </section>
+
+                <section>
+                    <h2>Languages</h2>
+                    <div class="lang">
+                        <div class="lang-bar">
+                            <span class="lang-name">Arabic</span>
+                            <div class="lang-bar-container">
+                                <div class="lang-bar-value" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-bar">
+                            <span class="lang-name">English</span>
+                            <div class="lang-bar-container">
+                                <div class="lang-bar-value" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Skills</h2>
+                    <!-- <div class="skills">
+                    <div class="skill-bar">
+                        <span class="skill-name">HTML</span>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-value" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <span class="skill-name">CSS</span>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-value" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar-container">
+                            <div class="skill-bar-value" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- <div class="progress-circle">
+                    <div class="progress">
+                        <span class="percent">80%</span>
+                        <div class="left-half-clipper">
+                            <div class="first50-bar"></div>
+                            <div class="value-bar"></div>
+                        </div>
+                    </div>
+                </div> -->
+                    <div class="skill-circle">
+                        <div>
+                            HTML
+                        </div>
+                        <svg class="progress-circle" width="100" height="100">
+                            <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+                        </svg>
+                        <div>
+                            CSS
+                        </div>
+                        <svg class="progress-circle" width="100" height="100">
+                            <circle class="progress-bg" cx="50" cy="50" r="45"></circle>
+                            <circle class="progress-bar" cx="50" cy="50" r="45"></circle>
+                        </svg>
+                    </div>
+                </section>
+                <section>
+                    <h1>Online Info </h1>
+                    <div>
+                        <a href="https://www.facebook.com/login/">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+                                alt="Facebook" width="60" height="50">
+                        </a>
+
+                        <a href="https://www.google.com/">
+                            <img src="logo.png" alt="Google" width="100" height="50">
+                        </a>
+                    </div>
+
+                </section>
+                <section>
+                   
+  <video controls width="350" height="200">
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.webm" type="video/webm"> 
+     <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+  </video>
+                </section>
+            </section>
+            <section>
+                <div class="header">
+                    Achievements
+                </div>
+                <section>
+                    <h1 style="margin: 2px;">
+                        First Project
+                    </h1>
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>
+                <section>
+                    <h1 style="margin: 2px;">
+                        Second Project
+                    </h1>
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>
+                <section>
+                    <h1 style="margin: 2px;">
+                        Third Project
+                    </h1>
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>    <br>
+                <div class="header">
+                    Education
+                </div>
+                <br>
+                <section>
+                    <h1 style="margin: 2px;">
+                        First School
+                    </h1 style="margin: 2px;">
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>
+            
+                <section>
+                    <h1 style="margin: 2px;">
+                        Second School
+                    </h1>
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>
+                <section>
+                    <h1 style="margin: 2px;">
+                        Second School
+                    </h1>
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                </section>
+                <br>
+                <div class="header">
+                    Work Experience
+                </div>
+                <br>
+                <section>
+                    <h1 style="margin: 2px;">
+                        First Company
+                    </h1 style="margin: 2px;">
+                    <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                        doloremque a ut blanditiis quaerat.</p>
+                        <h1 style="margin: 2px;">
+                            Second Company
+                        </h1 style="margin: 2px;">
+                        <p style="margin: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, enim, nesciunt accusantium
+                            doloremque a ut blanditiis quaerat.</p>
+                </section>
+            </section>
+        </section>
+    </div>
+    <script>
+
+        // var contactSection = document.querySelector('#ringingSound'); // Replace '.contact-section' with your actual contact section class or ID
+        // var audio = new Audio('https://www.soundsnap.com/hood_star.mp4'); // Replace 'URL_OF_YOUR_RINGING_SOUND' with the actual URL of your sound file
+
+        // contactSection.addEventListener('mouseenter', () => {
+        //     audio.play();
+        // });
+
+        // contactSection.addEventListener('mouseleave', () => {
+        //     audio.pause();
+        //     audio.currentTime = 0; // Resets the audio to the beginning
+        // });
+
+
+
+        var audio = document.getElementById('ringingSound');
+
+        function playSound() {
+           // if (audio.paused)
+                audio.play();
+        }
+
+        function stopSound() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</body>
+
+</html>

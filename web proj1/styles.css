@@ -1,0 +1,24 @@
+/* Your custom CSS styles go here */
+
+/* Example styles for product cards */
+.card {
+    margin-bottom: 20px;
+  }
+  
+  /* Example styles for responsiveness */
+  @media (max-width: 768px) {
+    /* Define styles for smaller screens here */
+  }
+  /* Your custom CSS styles go here */
+
+/* Style for active link */
+.navbar-nav .nav-item .active {
+    color: white; /* Set the text color for the active link */
+  }
+  
+  /* Style for inactive links */
+  .navbar-nav .nav-item .nav-link {
+    color: gray; /* Set the text color for inactive links */
+  }
+  
+ 

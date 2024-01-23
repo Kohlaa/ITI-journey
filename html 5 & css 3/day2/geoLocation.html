@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function showLocationOnMap() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+
+                    var mapUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+                    window.open(mapUrl, '_blank');
+                }, function (error) {
+                    console.error('Error getting location:', error.message);
+                });
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Show My Location on Google Maps</h1>
+    <button onclick="showLocationOnMap()">Get My Location</button>
+</body>
+
+</html>

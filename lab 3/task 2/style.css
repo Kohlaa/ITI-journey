@@ -1,0 +1,29 @@
+ul {
+    position: fixed;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    height: 30;
+    width: 100%;
+}
+ul li {
+    float: left;
+    padding: 5px;
+    /* background-color:  */
+}
+
+.ulEffect li a{
+    /* color: aquamarine; */
+    display: inline-block;
+}
+
+/* .fl{
+    background-color: aquamarine;
+} */
+ul li a:hover{
+    background-color: red;
+}
+.par{
+    padding: 50;
+}

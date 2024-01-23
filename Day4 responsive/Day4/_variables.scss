@@ -1,0 +1,94 @@
+////////////////// mixin ////////////////
+@mixin alert-styles {
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+@mixin alert-hover($color) {
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+
+@mixin simple-animation($duration: 0.5s,
+  $timing-function: ease,
+  $iteration-count: infinite) {
+  animation: simpleAnimation $duration $timing-function $iteration-count;
+
+  @keyframes simpleAnimation {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+}
+
+// function
+@function random-color() {
+  $red: random(255);
+  $green: random(255);
+  $blue: random(255);
+  $alpha: 1;
+  @return rgba($red, $green, $blue, $alpha);
+}
+
+//theme colors
+$primary: #326dee;
+$secondary: #1ac888;
+$error: #d32752;
+$info: #f6c31c;
+// class
+$calsses: (
+  "sucsess": ".sucsess",
+  "Msg": ".msg",
+  "warning": ".warning",
+);
+
+//color palette
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "error": $error,
+  "info": $info,
+  "blue": #1919e6,
+  "red": #e61919,
+  "yellow": #e6e619,
+  "green": #19e635,
+  "orange": #ffa600,
+  "purple": #9900ff,
+  "gray": #808080,
+  "black": black,
+  "white": white,
+);
+
+// @debug map-get($colors, "purple"); //#9900ff
+// @debug map-has-key($colors, "purple"); //true
+// @debug map-remove($colors, "purple");
+// @debug map-merge($colors, ("purple" : #ffc0cb));
+
+// spacing
+$base-padding: 0.75rem;
+$base-marign: 0.75rem;
+
+// border
+$base-border-thikness: 1px;
+$base-border-raduis: 20px;
+
+//box-shadow
+$base-box-shadow: 1px 3px 5px rgp(0, 0, 0, 0.1);
+
+//font size
+$base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;

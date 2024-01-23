@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form id="employeeForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required><br><br>
+
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" required><br><br>
+
+        <label for="department">Department:</label>
+        <select name="department" id="department" required>
+            <option value="HR">HR</option>
+            <option value="IT">IT</option>
+            <option value="Finance">Finance</option>
+        </select><br><br>
+
+        <button type="button" onclick="addEmployee()">Add Employee</button>
+        <!-- <button type="button" onclick="getEmployeeById()">Get Employee</button>
+        <button type="button" onclick="delEmp()">Delete Employee</button> -->
+    </form>
+
+    <br>
+
+    <table id="employeeTable" border="2">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody id="employeeData">
+
+        </tbody>
+    </table>
+    <script>
+        showEmployees();
+        function addEmployee() {
+            let fname = document.getElementById("firstName").value;
+            let lname = document.getElementById("lastName").value;
+            let age = document.getElementById("age").value;
+            let sal = document.getElementById("salary").value;
+            let dep = document.getElementById("department").value;
+            let employee = {
+                fname, lname, age, sal, dep
+            }
+            // 1
+            let xhr = new XMLHttpRequest();
+            //2
+            xhr.open("POST", "https://fir-day1-70aed-default-rtdb.firebaseio.com/employee.json")
+            //3
+            xhr.send(JSON.stringify(employee));
+            //4
+            console.log(xhr.response);
+            xhr.addEventListener("load", () => {
+                console.log(xhr.response);
+                showEmployees();
+            })
+        }
+        function showEmployees() {
+            employeeData.innerHTML = ""
+            let xhr2 = new XMLHttpRequest();
+            xhr2.open("GET", "https://fir-day1-70aed-default-rtdb.firebaseio.com/employee.json");
+            xhr2.send();
+            xhr2.addEventListener('load', () => {
+                let data = JSON.parse(xhr2.response);
+                // console.log(data);
+                let employeeData = document.getElementById("employeeData")
+
+                for (let k in data) {
+                    employeeData.innerHTML += `
+                    <tr>
+                        <td>${data[k].fname}</td>
+                        <td>${data[k].lname}</td>
+                        <td>${data[k].age}</td>
+                        <td>${data[k].sal}</td>
+                        <td>${data[k].dep}</td>
+                        <td><button class='btn btn-danger' onclick='delEmp("${k}")'>Delete</button></td>
+                        <td><button class='btn btn-danger' onclick='updateEmployee("${k}")'>Update</button></td>
+                    </tr>
+                    `
+                }
+            })
+        }
+        function delEmp(id) {
+            let isAgree = confirm("Are you sure ??")
+            if (isAgree) {
+                let xhr3 = new XMLHttpRequest()
+                xhr3.open("Delete", `https://fir-day1-70aed-default-rtdb.firebaseio.com/employee/${id}.json`)
+                xhr3.send();
+                xhr3.addEventListener("load", () => {
+                    showEmployees();
+                })
+            }
+        }
+        function getEmployee(id) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", `https://fir-day1-70aed-default-rtdb.firebaseio.com/employee/${id}.json`);
+            xhr.send();
+            xhr.addEventListener('load', () => {
+                if (xhr.status === 200) {
+                    let employee = JSON.parse(xhr.responseText);
+                    console.log("Employee:", employee);
+                } else {
+                    console.log("Employee not found!");
+                }
+            });
+        }
+
+        function updateEmployee(id) {
+            let fname = document.getElementById("firstName").value;
+            let lname = document.getElementById("lastName").value;
+            let age = document.getElementById("age").value;
+            let sal = document.getElementById("salary").value;
+            let dep = document.getElementById("department").value;
+
+            let updatedEmployee = {
+                fname, lname, age, sal, dep
+            };
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("PATCH", `https://fir-day1-70aed-default-rtdb.firebaseio.com/employee/${id}.json`);
+            xhr.send(JSON.stringify(updatedEmployee));
+
+            xhr.addEventListener("load", () => {
+                showEmployees();
+            });
+        }
+
+    </script>
+</body>
+
+</html>

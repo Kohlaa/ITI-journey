@@ -1,0 +1,88 @@
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+.card-deck .card {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-deck .card:hover {
+    transform: translateY(-5px);
+}
+
+.card:last-child {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.card:last-child .card-body {
+    background-color: #f3f3f3;
+}
+
+.card:last-child i {
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.container-fluid {
+    padding-top: 60px; 
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.text-muted {
+    display: block;
+    text-align: right;
+  }
+  
+  .action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .accept-button {
+    background-color: #4CAF50;
+  }
+  
+  .refuse-button {
+    background-color: #FF5733;
+  }
+  
+  .action-button:hover {
+    filter: brightness(90%);
+  }
+.authName{
+    text-align: left;
+}  
+.authPic {
+    
+    display: flex;
+    align-items: flex-start; 
+  }
+  
+  .authPic {
+    width: 50px; 
+    float: left; 
+    margin-right: 20px; 
+    border-radius: 40px;
+  }
+  

@@ -1,0 +1,12 @@
+#container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.image {
+    width: 200px;
+    height: auto;
+    transition: filter 0.5s ease-in-out;
+}
+

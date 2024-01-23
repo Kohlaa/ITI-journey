@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    
+
+
+        <label for="bands">Select a Band:</label>
+        <select id="bands" onchange="populateArtists()">
+            <option value="">Select Band</option>
+        </select>
+        
+        <label for="artists">Select an Artist:</label>
+        <select id="artists" onchange="openArtistLink()">
+            <option value="">Select Artist</option>
+        </select>
+
+    
+        <script src='/artist/artist.js'></script>
+</body>
+</html>

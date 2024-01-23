@@ -1,0 +1,9 @@
+/* Apply Lucida Calligraphy font to p, div, and span tags */
+p, div, span {
+    font-family: "Lucida Calligraphy", cursive;
+}
+
+/* Center h1 tag inside a div */
+#header {
+    text-align: center;
+}

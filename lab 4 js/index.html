@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js">
+    </script>
+</head>
+
+<body>
+    <!-- <button onclick="checkEmail()">
+        Check email
+    </button> -->
+
+    <!-- <form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" pattern="[A-Za-z]{4,}(?: [A-Za-z]{3,})+">
+        <input type="submit" value="Submit" onclick="welcome.html">
+    </form> -->
+
+    <form action="welcome.html" method="get">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" value="Enter your user name here"
+            onfocus="(this.value=='Enter your user name here')? this.value='':this.value=this.value;">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+
+
+
+    <a href="#" id="adlink" onclick="openWin()">Click here</a>
+
+</body>
+
+</html>

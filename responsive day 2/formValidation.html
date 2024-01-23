@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Alert with Form Validation</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <form id="validationForm">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+        <div class="valid-feedback">Valid email!</div>
+        <div class="invalid-feedback">Please enter a valid email.</div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="navigateButton">Submit</button>
+    </form>
+
+    <div class="alert alert-danger mt-3" id="errorAlert" style="display: none;">
+      Please enter a valid email before submitting.
+    </div>
+
+    <div class="alert alert-success mt-3" id="successAlert" style="display: none;">
+      Valid input! The form is ready to submit.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    const form = document.getElementById('validationForm');
+    const emailInput = document.getElementById('email');
+    const successAlert = document.getElementById('successAlert');
+    const errorAlert = document.getElementById('errorAlert');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (form.checkValidity() === false) {
+        emailInput.classList.add('is-invalid');
+        errorAlert.style.display = 'block';
+      } else {
+        emailInput.classList.remove('is-invalid');
+        emailInput.classList.add('is-valid');
+        successAlert.style.display = 'block';
+        successAlert.innerHTML = 'Valid input! The form is ready to submit.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        form.reset();
+        setTimeout(() => {
+          successAlert.style.display = 'none';
+          window.location.href = "homePage.html";
+        }, 2000);
+      }
+    });
+
+    emailInput.addEventListener('input', function () {
+      emailInput.classList.remove('is-invalid', 'is-valid');
+      errorAlert.style.display = 'none';
+      successAlert.style.display = 'none';
+    });
+  </script>
+
+</body>
+
+</html>

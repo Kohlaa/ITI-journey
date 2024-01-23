@@ -1,0 +1,87 @@
+.cv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+.header {
+    display: flex;
+    background-color: orange;
+}
+
+.content {
+    margin-left: 50px;
+}
+
+.skills,
+.lang {
+    margin-bottom: 20px;
+}
+
+.skill-bar,
+.lang-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.skill-name,
+.lang-name {
+    flex: 1;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.skill-bar-container,
+.lang-bar-container {
+    width: 60%;
+    max-width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-bar-value {
+    background-color: #3498db;
+    height: 20px;
+}
+
+.lang-bar-value {
+    background-color: #db3f34;
+    height: 20px;
+}
+
+.contact {
+    margin-bottom: 20px;
+
+    /* padding: 5px; */
+    /* background-color: #f0f0f0; */
+    /* border-radius: 5px; */
+}
+
+.progress-circle {
+    transform: rotate(-90deg);
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #ccc;
+
+    stroke-width: 8;
+    stroke-dasharray: 285;
+    stroke-dashoffset: 0;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: #4caf50;
+
+    stroke-width: 8;
+
+    stroke-dasharray: 285;
+    stroke-dashoffset: calc(285 - (285 * 80) / 100);
+}
+
+.skill-circle {
+    display: flex;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .part:hover {
+            fill: lightblue;
+            transition: fill 2s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg width="200" height="200">
+        <ellipse class="part" cx="100" cy="80" rx="30" ry="20" fill="#ffd700" stroke="#000" stroke-width="2"
+            id="nose" />
+        <circle class="part" cx="80" cy="60" r="10" fill="#ff4500" stroke="#000" stroke-width="2" id="left-eye" />
+        <circle class="part" cx="120" cy="60" r="10" fill="#ff4500" stroke="#000" stroke-width="2" id="right-eye" />
+        <ellipse class="part" cx="100" cy="100" rx="20" ry="10" fill="#ff4500" stroke="#000" stroke-width="2"
+            id="mouth" />
+    </svg>
+
+    <script>
+        const parts = document.querySelectorAll('.part');
+
+        parts.forEach(part => {
+            part.addEventListener('mouseover', () => {
+                part.style.fill = 'lightblue';
+            });
+
+            part.addEventListener('mouseout', () => {
+                part.style.fill = part.getAttribute('fill');
+            });
+
+            part.addEventListener('click', () => {
+                alert(part.id);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

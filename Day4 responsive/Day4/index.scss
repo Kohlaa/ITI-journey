@@ -1,0 +1,44 @@
+@import "variables";
+@import "colors";
+%alert {
+  @include alert-styles;
+}
+.success {
+  @extend %alert;
+  background-color: #5cb85c;
+  color: #fff;
+  @include alert-hover(#5cb85c);
+}
+.msg {
+  @extend %alert;
+  background-color: #5bc0de;
+  color: #fff;
+  @include alert-hover(#5bc0de);
+}
+.warning {
+  @extend %alert;
+  background-color: #f0ad4e;
+  color: #fff;
+  @include alert-hover(#f0ad4e);
+}
+////////////////////////////// Animation /////////////////////////////////
+
+.animated-div {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  margin: 20px;
+  border-radius: 5px;
+  @include simple-animation(1s, ease-in-out);
+}
+///////////////////////////// Random /////////////////////////////////////////////
+.random-div {
+  width: 100px;
+  height: 100px;
+  background-color: random-color();
+}
+//////////////////// erorr ///////////////////////
+// @error "Error";
+/////////////////////debug ////////////////////
+// $debug-color: #fff;
+// @debug "Color inside mixin: #{$debug-color}";
