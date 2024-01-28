@@ -1,0 +1,34 @@
+<div  class="mp-3" >
+  <label for="" class="form-label">Category</label>
+  <select class="form-select form-select-lg" [(ngModel)]="selectedId">
+    <option *ngFor="let cat of categories" [value]="cat.id">
+      {{ cat.name }}
+    </option>
+  </select>
+  <!-- <button class="btn btn-primary" (click)="changeCat()">Change Category</button> -->
+  <!-- {{selectedId}} -->
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4" >
+  <ng-container *ngFor="let prd of product" class="col" [ngSwitch]="prd.catId">
+    <div appProductCard
+      *ngIf="prd.quantity != 0"
+      [class]="myClass"
+      [class.bg-warning]="prd.quantity == 1"
+      [style.display]="prd.catId != selectedId ? 'none' : 'block'"
+    >
+      <div  [class]="myClass"  [class.bg-warning]="prd.quantity == 1">
+        <img  [src]="prd.imgUrl" class="card-img-top" alt="..." height="500px" />
+        <div class="card-body">
+          <h5 class="card-title">{{ prd.name }}</h5>
+          <p class="card-text">Quantity:{{ prd.quantity }}</p>
+          <p class="card-text">Price:{{ prd.price }}</p>
+          <input type="number" class="from-control" />
+          <button class="btn btn-primary" (click)="buy(prd.id)">Buy</button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+  <!-- <div [ngClass]="{'first': true, 'second': true, 'third': false}">ng class</div> -->
+</div>

@@ -1,9 +1,8 @@
 export class Store{
-    name:string,
-    branches:string[],
-    logo:string,
-    constructor(_name:string,_branches:string[],
-        _logo:string,){
+    name:string;
+    branches:string[];
+    logo:string;
+    constructor(_name:string,_branches:string[], _logo:string){
         this.name=_name;
         this.branches=_branches;
         this.logo=_logo;

@@ -1,0 +1,36 @@
+<div class="mb-3">
+  <label for="" class="form-label">category</label>
+  <select class="form-select form-select-lg" [(ngModel)]="selectedCategoryId">
+    <option [value]="ca.id" *ngFor="let ca of categories">
+      {{ ca.name }}
+    </option>
+  </select>
+</div>
+
+<app-products
+  (onquantityChanged)="viewquant($event)"
+  (onObjCreated)="viewObj($event)"
+  [receivedSelectedCatId]="selectedCategoryId"
+></app-products>
+
+<div >
+  <table class="table ">
+    <thead>
+      <tr>
+        <td >name</td>
+        <td>price</td>
+        <td>quantity</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of productslist">
+        <td scope="row">{{ prod.name }}</td>
+        <td>{{ prod.price }}</td>
+        <td>{{ prod.totalQuan}}</td>
+        <td><button (click)="delete()">del </button></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
